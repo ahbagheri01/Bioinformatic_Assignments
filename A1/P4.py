@@ -1,4 +1,5 @@
 total_node = 0
+ansf = open("A4.txt","w")
 class Node:
     def __init__(self,id) -> None:
         self.node = id
@@ -15,7 +16,7 @@ class Node:
             total_node += 1
             new_node = Node(total_node)
             self.edges[c] = new_node
-            print(f"{self.node}->{new_node.node}:{c}")
+            ansf.write(f"{self.node}->{new_node.node}:{c}\n")
             new_node.parse(patern= patern[1:])
 with open("rosalind_ba9a.txt","r") as f:
     lines = f.readlines()
@@ -23,3 +24,4 @@ root = Node(total_node)
 for line in lines:
     line = line.strip()
     root.parse(line)
+ansf.close()

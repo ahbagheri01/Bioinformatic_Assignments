@@ -12,6 +12,8 @@ DNA = DNA.replace("T","A")
 DNA = DNA.replace("G","C")
 DNA = DNA.replace("O","T")
 DNA = DNA.replace("F","G")
-print(DNA)
+f = open("A2.txt","w")
+f.write(DNA)
+f.close()
 
 

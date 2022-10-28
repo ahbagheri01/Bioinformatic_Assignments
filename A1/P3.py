@@ -4,5 +4,7 @@ with open("rosalind_lexf.txt","r") as f:
 alphabet = lines[0].strip().split(" ")
 n = int(lines[1])
 base = len(alphabet)
+f = open("A3.txt","w")
 for x in itertools.product(alphabet, repeat=n):
-    print(''.join(x))
+    f.write(''.join(x))
+    f.write("\n")
