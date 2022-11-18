@@ -1,8 +1,8 @@
->Rosalind_7
-ATATCCG
->Rosalind_35
-TCCG
->Rosalind_23
-ATGTACTG
->Rosalind_44
-ATGTCTG
+>Rosalind_0536
+ACACCCAA
+>Rosalind_6609
+GTGTGGCCA
+>Rosalind_6987
+CGGCCTTG
+>Rosalind_1169
+GGTGGAGA

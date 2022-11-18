@@ -65,7 +65,7 @@ def align(DNAs, dp, trace):
         l1,l2,l3,l4 = l1 - permutation[0], l2 - permutation[1], l3 - permutation[2], l4 - permutation[3]
     return final_align
 dp, keep_trace = d(DNAs)
-f.write(f"{dp[-1,-1,-1,-1]}\n")
+f.write(f"{int(dp[-1,-1,-1,-1])}\n")
 aligns = align(DNAs,dp,keep_trace)
 f.write("\n".join(aligns))
 
