@@ -15,14 +15,11 @@ for line in f.readlines():
     l = line.strip()
     d = l.split('->')
     d1 = d[1].split(':')
-    a,b,w = int(l[0]),int(d1[0]),int(d1[1])
-    if a not in Nodes:
+    a,b,w = int(d[0]),int(d1[0]),int(d1[1])
+    if not a in Nodes:
         Nodes[a] = Node(a)
-    if b not in Nodes:
-        Nodes[b] = Node(b)
     Nodes[a].add_e(b,w)
-    Nodes[b].add_e(a,w)
-print
+
 matrix = [[0 for i in range(N)] for _ in range(N)]
 def bfs(node):
     global matrix
@@ -32,12 +29,9 @@ def bfs(node):
     q.put(node)
     while not q.empty():
         cur = q.get()
-        print(cur)
         curnodeE = Nodes[cur].e
         curnodeW = Nodes[cur].w
-        print(list(zip(curnodeE,curnodeW)))
         for u,w in zip(curnodeE,curnodeW):
-            print(cur,u,w)
             if not u in dis:
                 dis[u] = dis[cur] + w
                 if u < N:
@@ -45,6 +39,12 @@ def bfs(node):
                     matrix[u][node] = dis[u]
                 q.put(u)
 for i in range(N-1):
-    print("s=",i)
     bfs(i)
-print("\n".join([" ".join([str(n) for n in m]) for m in matrix]))
+
+for i in range(N):
+    for j in range(N):
+        if (matrix[i][j] != matrix[j][i]):
+            print("error")
+f = open("A13.txt","w")
+f.write("\n".join([" ".join([str(n) for n in m]) for m in matrix]))
+f.close()
