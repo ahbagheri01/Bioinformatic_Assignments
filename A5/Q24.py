@@ -51,4 +51,5 @@ ans = []
 for q in queries:
     ans.append(str(BWmatch(dnasort,dna,q,indexor)))
 open("A24.txt","w").write(" ".join(ans))
-print(" ".join(ans))
+can1 = " ".join(ans)
+#print(" ".join(can1))
